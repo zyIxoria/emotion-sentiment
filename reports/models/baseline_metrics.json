@@ -1,0 +1,108 @@
+{
+  "experiment_name": "Phase 3 Baseline TF-IDF + Logistic Regression",
+  "timestamp": "2026-10-16 05:26:54",
+  "environment": {
+    "os": "WSL2 Ubuntu 24.04 LTS",
+    "java_version": "OpenJDK 11.0.32.1",
+    "hadoop_version": "3.3.6",
+    "pyspark_version": "3.5.5",
+    "spark_master": "local[4]",
+    "spark_driver_memory": "4g"
+  },
+  "datasets": {
+    "train_path": "hdfs://localhost:9000/bigdata/reviews/processed/all_beauty_balanced_train.parquet",
+    "train_samples": 45000,
+    "train_distribution": {
+      "0": 15000,
+      "1": 15000,
+      "2": 15000
+    },
+    "test_path": "hdfs://localhost:9000/bigdata/reviews/processed/all_beauty_natural_test.parquet",
+    "test_samples": 20000,
+    "test_distribution": {
+      "0": 14920,
+      "1": 1746,
+      "2": 3334
+    }
+  },
+  "pipeline_config": {
+    "tokenizer": "RegexTokenizer (pattern=\\W+, toLowercase=True)",
+    "stop_words": "StopWordsRemover (English, 181 words)",
+    "hashing_tf": {
+      "numFeatures": 10000
+    },
+    "idf": "IDF (standard inverse document frequency)",
+    "classifier": {
+      "name": "LogisticRegression",
+      "maxIter": 100,
+      "regParam": 0.01,
+      "family": "multinomial"
+    }
+  },
+  "metrics_overall": {
+    "accuracy": 0.7355,
+    "macro_f1": 0.6088,
+    "macro_precision": 0.6001,
+    "macro_recall": 0.6746,
+    "weighted_f1": 0.7707,
+    "weighted_precision": 0.8348,
+    "weighted_recall": 0.7355
+  },
+  "metrics_per_class": {
+    "positive_0": {
+      "precision": 0.9551,
+      "recall": 0.7667,
+      "f1_score": 0.8506,
+      "support": 14920
+    },
+    "neutral_1": {
+      "precision": 0.2338,
+      "recall": 0.5802,
+      "f1_score": 0.3333,
+      "support": 1746
+    },
+    "negative_2": {
+      "precision": 0.6115,
+      "recall": 0.677,
+      "f1_score": 0.6426,
+      "support": 3334
+    }
+  },
+  "confusion_matrix": {
+    "classes": [
+      "positive (0)",
+      "neutral (1)",
+      "negative (2)"
+    ],
+    "matrix": [
+      [
+        11439,
+        2473,
+        1008
+      ],
+      [
+        307,
+        1013,
+        426
+      ],
+      [
+        231,
+        846,
+        2257
+      ]
+    ]
+  },
+  "timings": {
+    "spark_init_seconds": 3.44,
+    "data_loading_seconds": 4.14,
+    "train_fit_seconds": 6.42,
+    "test_predict_seconds": 0.94,
+    "model_save_seconds": 7.19,
+    "total_experiment_seconds": 21.23
+  },
+  "model_save_status": {
+    "hdfs_path": "hdfs://localhost:9000/bigdata/models/baseline_lr_tfidf",
+    "success": true,
+    "message": "Đã lưu thành công tại hdfs://localhost:9000/bigdata/models/baseline_lr_tfidf"
+  }
+}

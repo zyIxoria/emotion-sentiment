@@ -1,0 +1,201 @@
+index,rating,rating_label,text_sentiment,alignment,title,text,pos_words,neg_words
+1,1,negative,negative,AGREE,BEWARE!!!  Flimsey and Terrible Quality,"This thing is completely useless.  It is about as sturdy as a plastic grocery bag, and has no practical use.  If I try t",,"useless, terrible, waste"
+2,1,negative,neutral,AGREE_MILD,Doesn't work,This slips like crazy! The fabric is a lycra type and simply slides off.,,
+3,1,negative,neutral,AGREE_MILD,Pretty doesn’t fit!,Pretty colors! To many wrap arounds!,,
+4,1,negative,neutral,AGREE_MILD,... at 300 degrees they got so hot it was like the,did not work at 300 degrees they got so hot it was like they were not even there,,
+5,1,negative,negative,AGREE,Waste of money,Waste of money. Doesn't prevent water from getting in the ears and all my baby wants to do is take it off.,,waste
+6,1,negative,negative,AGREE,Adjustable!  Not Really,These caps you can adjust the band with the elastic that is provided in the band but the seam where the band meets the c,,disappointing
+7,1,negative,positive,MISMATCH_STRONG,Snaps apart too quickly.,"Get the original.  These aren't good for thick and coarse hair. Plus, it snaps if you stare at it. Poorly made product.",good,
+8,1,negative,neutral,AGREE_MILD,The glue is not up to the pressure of the spring t,"One of these clips promptly disassembled because the force of the spring clips when not in use on your hair, is too much",,
+9,1,negative,neutral,AGREE_MILD,Don’t buy,Weird layer over closer. Cannot bleach the notes and customize.,,
+10,1,negative,mixed,AGREE,Not good for me,"I bought one of these in the hospital's gift shop, the last time I had to have lab work done.  Used it last night for th",good,"horrible, rash"
+11,1,negative,neutral,AGREE_MILD,Dont buy if you have sensitive teeth,The bristles are TOUGH and HARD! I have sensitive teeth so i cant use them.,,
+12,1,negative,mixed,AGREE,Ease of use,My hair is shoulder length. I cannot get any of it to stay on the wand. Nothing to hold it in place except your fingers ,good,waste
+13,1,negative,mixed,AGREE,Updated I have got a rash,After a month of testing out I have no more black circles and puffiness is gone also. Every week got better and better. ,great,rash
+14,1,negative,negative,AGREE,Quality is just bad bad,"Literally arrived broken, don't buy!!!",,"broken, bad"
+15,1,negative,negative,AGREE,No review,"Bottles tops were broken polish everywhere, and cannot return item or get replaced.",,broken
+16,1,negative,neutral,AGREE_MILD,False lashes,Look unnatural.,,
+17,1,negative,negative,AGREE,Painful . . . That’s all I have to say.,Awful,,awful
+18,1,negative,positive,MISMATCH_STRONG,Majority are unusable,Almost 2/3 had holes & the elastic was torn or unraveled. Would not recommend or repurchase. Better quality from a plast,recommend,
+19,1,negative,negative,AGREE,Subpar,I was really excited to try these bath bombs because I'm lush obsessed but lush is expensive! I tried to keep my standar,,disappointed
+20,1,negative,mixed,AGREE,"Pricey, poorly designed packaging, ineffective",This was originally a 5 star review but I've since dropped it to a 1 for 3 reasons<br />1. It worked for 3 or so days. A,good,terrible
+21,1,negative,negative,AGREE,Bad product,Bad,,bad
+22,1,negative,negative,AGREE,DO NOT BUY...HORRIBLE,"THE WORST AND NOT HUMAN HAIR!!! Broke me out, not the same curl pattern AND not 16 inches",,"worst, horrible"
+23,1,negative,neutral,AGREE_MILD,STAMPER DOESNT WORK,STAMPER doesn't work!!,,
+24,1,negative,negative,AGREE,Read description carefully!!,There are only 2 pairs of magnetic lashes included!! The other 20 pairs are NOT magnetic and require lash glue. Extremel,,disappointed
+25,1,negative,neutral,AGREE_MILD,Don’t wait your money.,The patches wouldn’t stay on.,,
+26,1,negative,mixed,AGREE,Do not buy,I installed this hair for a quick half up half down style for an event. Not ENTIRELY disappointed considering I knew thi,"recommend, best",disappointed
+27,1,negative,positive,MISMATCH_STRONG,Cheap product,Not good,good,
+28,1,negative,mixed,AGREE,Total rip off,I tried this in Cancun and what you actually get is not anywhere near as effective as what the salespeople say it is.  I,effective,waste
+29,1,negative,negative,AGREE,Horrible,She’d like crazy & get very nappy! Also the hair is synthetic!,,horrible
+30,1,negative,neutral,AGREE_MILD,Small and overpriced,Small and oddly shaped. There's no curve to the comb so it doesn't lay properly against my head. The bronze color might ,,
+31,1,negative,negative,AGREE,Don't waste your money,Does not add color like in photo. Not even close.,,waste
+32,1,negative,negative,AGREE,Waste of money,"Completely useless. Very slippery, they won’t hold the hair under any circumstances.",,"useless, waste"
+33,1,negative,negative,AGREE,Horrible,Hollow web ween wig,,horrible
+34,1,negative,negative,AGREE,Moldy and not round Loofahs,I WOULD NOT GIVE A ONE STAR IF I COULD. THESE ARE NOT LIKE THE PHOTOS AT ALL.  THEY WERE FULL OF MOLD AND ARE NOT ROUND ,,"gross, disappointing"
+35,1,negative,neutral,AGREE_MILD,Not preglued like the description says,These are NOT preglued. See A of the instructions on the back. I did not open them because I’m returning.,,
+36,1,negative,negative,AGREE,Ehh,Maybe the applicator brush just missed the mark and I never was able to apply this stuff to look decent. Once it's dried,,"never, heavy"
+37,1,negative,negative,AGREE,Alcohol Wet Wipes,"I like the size of these wipes for sanitizing groceries like plastic bottles, etc. but I'm not so sure of the strength o",,worst
+38,1,negative,positive,MISMATCH_STRONG,My photo represents the best I could do after AN H,Oh my god no. My photo represents the best I could do after AN HOUR of trying to use this.,best,
+39,1,negative,negative,AGREE,Just absolutely terrible! I don't know what they w,The highlight is nonexistent! Yet the bronzer is overly pigmented. makes your face look dry and cakey. Just absolutely t,,terrible
+40,1,negative,neutral,AGREE_MILD,Not well made,Grips keep falling off every few seconds.,,
+41,2,negative,positive,MISMATCH_STRONG,Not as advertised,I haven't been able to use these successfully yet.  I have attempted to use them five times and all five times they stic,great,
+42,2,negative,neutral,AGREE_MILD,Didn't work on my stained lower teeth.,"I used it faithfully, and saw no real improvement. However, the teeth I used it are really beat-up and mega-stained. I s",,
+43,2,negative,positive,MISMATCH_STRONG,Works ok,Works ok.  Helps a bit doing my daughters hair,works,
+44,2,negative,neutral,AGREE_MILD,Average - will use less than anticipated,I ordered two. One lines up well and cuts cleanly. The second one doesn’t close and mate well.,,
+45,2,negative,mixed,AGREE,not effective,A regular conditioner/treatment. I did not have any of the wonderful effects listed by others. It left my hair rather he,"effective, wonderful","heavy, greasy"
+46,2,negative,mixed,AGREE,Terrible!!!,I don't know how anyone can claim that they tattoo eyebrows look good.  They're horrible.  They're fake and they look fa,good,"fake, terrible, horrible"
+47,2,negative,neutral,AGREE_MILD,The Pump Sucks,The pump sucks. Doesn't pump out enough lotion at a time and is very inconvenient to use.,,
+48,2,negative,mixed,AGREE,Waste of money,"It smells great sniffing the bottle, but the oil doesn't come out. The &#34;rollerball&#34; doesn't roll.",great,"waste, smells"
+49,2,negative,positive,MISMATCH_STRONG,Barely Made a Wave,"I have been trying, for well over 30 years, to get a curling iron that actually did what it was supposed to – curl my ha","super, good, works",
+50,2,negative,neutral,AGREE_MILD,No,I should have listened to the reviews. The color is weird.,,
+51,2,negative,neutral,AGREE_MILD,Two Stars,Fell apart within one wear.,,
+52,2,negative,positive,MISMATCH_STRONG,"Okay, but some issues",Liked them because I was able to breath a bit better. A little more air flow. Felt some what cooler.<br /><br />Disliked,recommend,
+53,2,negative,neutral,AGREE_MILD,Very uncomfortable,Order for me and my husband but they turned out to be very uncomfortable... I thought it was as advertised and due to so,,
+54,2,negative,neutral,AGREE_MILD,This Oil had no smell...,I dislike this oil it smell nothing like a rose musk.,,
+55,2,negative,mixed,AGREE,Disappointed!!!! Was a great product but they chan,I am on my second bottle. The first bottle was amazing!!! It's smelled good adn cleaned my blackheads like nothing I had,"amazing, good, great, loved","never, disappointed, smells, bad"
+56,2,negative,negative,AGREE,Does not moisturize,I am disappointed. I wanted something to moisturize my hands and this felt like I was rubbing my hands with water.,,disappointed
+57,2,negative,mixed,AGREE,Tangles super easily,"Very pretty color, but a tangled mess.",super,mess
+58,2,negative,positive,MISMATCH_STRONG,Just Meh,"The bristles are super soft, almost like a make-up brush soft. Too soft to clean anything. They were a light gray and go",super,
+59,2,negative,negative,AGREE,Sheer colors,Colors are NOT like the pictures. Very sheer and the magnet does not do anything. Don't waste  your money,,waste
+60,2,negative,neutral,AGREE_MILD,"Shedding like the ""before"" in a heads&shoulders ad",I bought it purely because it's cheap and my only usage is to apply BHA toner. But I just can't take the shedding anymor,,
+61,2,negative,negative,AGREE,Two Stars,I know never buy cheap things,,never
+62,2,negative,negative,AGREE,Very disappointed in quality.,Very rough texture. This is hair I did not keep in long.,,disappointed
+63,2,negative,negative,AGREE,Waste of money,I'm disappointed. Mostly in myself as I should have read the ingredient list carefully. This is just a glycerin soap wit,,"disappointed, waste, heavy"
+64,2,negative,mixed,AGREE,Better hanging toiletries kits out there,Disappointing product. Bag structure needs alot of pushing out in the corners and does not hang nicely. Its just awkward,"excellent, best",disappointing
+65,2,negative,positive,MISMATCH_STRONG,No results to speak of,"The bristles on the mascara wand were too long for my liking. As for the mascara itself, it’s very thin, almost kind of ",great,
+66,2,negative,positive,MISMATCH_STRONG,Not for 4C Afro-kinky!,Definitely not for my 4C Afrotexture! It snares and has to be pryed from my coils. Would NOT recommend for similar textu,recommend,
+67,2,negative,neutral,AGREE_MILD,cute label we didn't like the way it smelled.,We just threw it away sorry!,,
+68,2,negative,mixed,AGREE,Beware-caused my entire face to breakout!,This lightweight spf foundation comes in a nice compact with the pad separated from the foundation. It’s a good size to ,"nice, good","never, greasy, allergic"
+69,2,negative,neutral,AGREE_MILD,Too many pieces.,Too many pieces.,,
+70,2,negative,negative,AGREE,Disappointed,Pull hair more than detangled,,disappointed
+71,2,negative,positive,MISMATCH_STRONG,Doesn't work for me,When I first got it and put batteries in the lock wouldn't stay in place so the back kept falling out. I returned it and,"love, good",
+72,2,negative,neutral,AGREE_MILD,Not stable on mounting shaft,This is my first electric toothbrush and was given to me by a friend to try out. I bought the new heads after carefully ,,
+73,2,negative,positive,MISMATCH_STRONG,Yes and no,"This works fine on the point end, but the stamp end is lame.  Maybe it’s just my eye shape, but I wouldn’t purchase it a",works,
+74,2,negative,negative,AGREE,Meh.,"Out of ALL the discs I got, I only found maybe 5 designs I liked. They really need to have up close BIG images of what i",,waste
+75,2,negative,neutral,AGREE_MILD,I’m ish,I feel like the video was not true. It was ish!,,
+76,2,negative,neutral,AGREE_MILD,Dry/old,"I this product came to me and was dry, so it did not work well, I did put some eye drops in it but was not worth getting",,
+77,2,negative,neutral,AGREE_MILD,Messy,Maybe if it was a wand,,
+78,2,negative,negative,AGREE,VERY DISAPPOINTED,"This product DOES NOT WORK as advertised. The only thing it did was make my lashes look thicker, there was ZERO length.",,disappointed
+79,2,negative,negative,AGREE,very cheap product,the product looks cheap and easy to break. not worth it. and there are white spots on mine. very disappointed,,disappointed
+80,2,negative,negative,AGREE,Smells like salad dressing and feels like petroleu,"I didn't care much for this sleeping mask. It came in an unsealed box. There's a plastic cover under the lid, but there ",,"mess, smells"
+81,3,neutral,neutral,AGREE_NEUTRAL,Stiff lining and tight fit,Chose this item specifically because it was made in the U.S.  Keep in mind that the materials are not likely manufacture,,
+82,3,neutral,neutral,AGREE_NEUTRAL,Not all have a clear base,You have to watch when adding sparkle to base color.  Some of these polishes will change the base.,,
+83,3,neutral,neutral,AGREE_NEUTRAL,Three Stars,Haven't seen any progress in hair growth yet but 🤷🏾‍♀️,,
+84,3,neutral,positive,NEUTRAL_SKEWED,It's cleans,Good if you don't have RA,good,
+85,3,neutral,mixed,NEUTRAL_MIXED,Stretch Mark Cream,"I have horrible stretchmarks as a result from all of my previous pregnancies, sadly. That made me obsessed trying new cr",favorite,horrible
+86,3,neutral,mixed,NEUTRAL_MIXED,Mirror stinks!,"If you're buying this for the mirror, don't waste your money! It's not even a real mirror! More like something with a me",good,"fake, disappointing, waste, stinks"
+87,3,neutral,neutral,AGREE_NEUTRAL,not too excited about this shampoo. I will use ...,"not too excited about this shampoo. I will use it, but not re purchase. I have hair on the dry side and wavy /curls... a",,
+88,3,neutral,neutral,AGREE_NEUTRAL,Too Drying: Not for Sensitive Skin,"The PH is too low, and the cleanser itself too drying.<br /><br />There are better products out there.<br /><br />Check ",,
+89,3,neutral,neutral,AGREE_NEUTRAL,Skip it if you were a hippie!,"I grew up in the 60's and have no idea how to do hair!  If you are not an expert skip these, I do Cher and...Cher!?",,
+90,3,neutral,neutral,AGREE_NEUTRAL,Three Stars,O.k. Product,,
+91,3,neutral,neutral,AGREE_NEUTRAL,Doesnt last as long as the regular nivea roll ons,Doesnt last as long. But i guess its because this is more natural and less damaging to health .  Would buy it again and ,,
+92,3,neutral,mixed,NEUTRAL_MIXED,Model looks better,This isn't as cute as the picture with the model but then I suppose that's normal. I was at first disappointed when I op,great,disappointed
+93,3,neutral,mixed,NEUTRAL_MIXED,Not bad but not the greatest either,You get a lot of hyaluronic acid serum in this bottle. It is pretty much scent less for those who prefer that this one i,"recommend, favorite, perfect, good",bad
+94,3,neutral,mixed,NEUTRAL_MIXED,Cute,"This wig LOOKS like a wig. It's frizzy and knots very easily. It's great for a costume, but I will never wear mine again",great,"never, fake"
+95,3,neutral,positive,NEUTRAL_SKEWED,Not especially pretty.,I love Orly. I’m new to them and am SO impressed. This color however.... I haven’t used much yellow polish and it’s as a,love,
+96,3,neutral,mixed,NEUTRAL_MIXED,I thought I would get these beautiful beach-y wave,Ok.  Not what I was expecting.  I thought I would get these beautiful beach-y waves but rather I got a mess of random si,"great, nice, love, beautiful",mess
+97,3,neutral,positive,NEUTRAL_SKEWED,Probably works well depending on your skin type,My husband is the one that used this because he was going through a rough patch. He is more prone to acne than I am and ,"best, perfect, works",
+98,3,neutral,neutral,AGREE_NEUTRAL,Lashes,Lost a lash within 12 hours,,
+99,3,neutral,neutral,AGREE_NEUTRAL,"No safety pins, inexplicably","Assumed there would be safety pins in here since there are so many things, but there weren’t! Not really worth the money",,
+100,3,neutral,neutral,AGREE_NEUTRAL,new mud mask,to expensive for such a little jar!!!!!!!,,
+101,3,neutral,neutral,AGREE_NEUTRAL,Its ok but...,I wanted this for applying acrylic cement which has the consistency of water. Unfortunately due to the way it's construc,,
+102,3,neutral,negative,NEUTRAL_SKEWED,Not enough hair but I'm OK with it and pay for,Disappointed in the amount of hair but I guess I get what I pay for,,disappointed
+103,3,neutral,negative,NEUTRAL_SKEWED,"Nope, walk away from this.",It's so small. Eyeshadow colors are smaller than dimes. You get what you pay for I guess. One color (bottom left) came b,,broken
+104,3,neutral,positive,NEUTRAL_SKEWED,It's ok,It works well but it is too small and moves around too much.  I wouldn't buy again.,works,
+105,3,neutral,neutral,AGREE_NEUTRAL,Just ok,Did not work to help remove calluses like previous products I bought,,
+106,3,neutral,positive,NEUTRAL_SKEWED,Good for practice,"What do you want for the price. I purchased these for &#34;practice&#34;. They served the purpose, maybe even better as ",good,
+107,3,neutral,negative,NEUTRAL_SKEWED,Difficult to Review for me,Want to make clear that I've never tried this type of eyebrow before and unfortunately it didn't work for me. I'm thinki,,never
+108,3,neutral,positive,NEUTRAL_SKEWED,Cute but not durable,Super cute and very light. However they fall off my head very easily and they fall apart in the wash.,super,
+109,3,neutral,positive,NEUTRAL_SKEWED,Good product,Does the job,good,
+110,3,neutral,positive,NEUTRAL_SKEWED,Not worth the price...,"$30 for these is too much. Half of the powders come with significantly less in the pots than others, not cool. The silve","best, works",
+111,3,neutral,positive,NEUTRAL_SKEWED,Softer Feel,These came in a 4 pack at a great price but there were a couple light brown mystery stains on one glove (looks as if fro,great,
+112,3,neutral,positive,NEUTRAL_SKEWED,"Pretty, but shimmery",I should have realized when it said luminizer that it was going to be a very fine glitter. I was looking for just a supe,"perfect, super",
+113,3,neutral,negative,NEUTRAL_SKEWED,Disappointed,I don’t get the hype. This did not work for me. I trashed the bottle after the third use. It broke my daughter out. I wo,,disappointed
+114,3,neutral,neutral,AGREE_NEUTRAL,okay,I don't know how long these are going to last.,,
+115,3,neutral,neutral,AGREE_NEUTRAL,"Packaging torn, opened bags, no brand marking",Packaging was very unprofessional! I was hoping to gift this to someone and have wrapped up with the other hair items bu,,
+116,3,neutral,neutral,AGREE_NEUTRAL,Itsy-bitsy hair ties,"Each of these are very small!  I truly thought I FINALLY got the larger one.  NO.  Try, try again.",,
+117,3,neutral,neutral,AGREE_NEUTRAL,Decent budget wig,Decent  budget wig,,
+118,3,neutral,neutral,AGREE_NEUTRAL,Three Stars,not enough hold for me.  too soft,,
+119,3,neutral,positive,NEUTRAL_SKEWED,"Good lotion, expensive, and in a poorly designed c","This lotion would get five stars, but I think it’s expensive for what it is and the container is definitely not user-fri",good,
+120,3,neutral,neutral,AGREE_NEUTRAL,Need very small amount to cover face and neck,Fresh and light/seems to hydrate well,,
+121,4,positive,positive,AGREE,Lock it makeup,"What is the work with my hair color for my eyebrows and I’m not unimpressed it is perfectly matched to the tea, but it d","recommend, works",
+122,4,positive,positive,AGREE,Not as good as expected from other ratings was a b,Not as good as expected is okay for price but nothing special,good,
+123,4,positive,positive,AGREE,4 stars,My daughter liked this sun screen but when I used it I had mixed options. I could tell that it contained alot of alochol,great,
+124,4,positive,positive,AGREE,I like it,keep it in my car as a spare in case I get somewhere and discover I need it. Works as advertised. I like it.,works,
+125,4,positive,positive,AGREE,Nice Product,"I have used this Perfect Formula Gel Coat for a number of years and really like the product.  My nails break easily, and","nice, perfect",
+126,4,positive,positive,AGREE,Want More Coverage!,"Bigger then the smaller 2.5 in.  sponges! Covers more areas! Fits into corners of eyes, nose creases etc better! Doesn't",good,
+127,4,positive,neutral,AGREE_MILD,Coating peels away and snags hair,Some of the coating started peeling exposing the metal and creating a jagged edge that my hair. Aside from that they wor,,
+128,4,positive,neutral,AGREE_MILD,Shine Reduction,I applied a thin layer on my face and it controlled my shine for the majority of the day. Very transparent.I will defina,,
+129,4,positive,positive,AGREE,Color spot on,Hair is thine at the top. Do some teasing to avoid seeing the tracks. Color is dead on what's shown. Great quality for t,great,
+130,4,positive,neutral,AGREE_MILD,Water flosser,Using this item made me feel like I was in the dentist's office. It was easy to setup and use. I plugged the poer adapte,,
+131,4,positive,mixed,AGREE,Great Shaver for the Money,"The 7110X is quiet, comfortable to hold and use, and gives me a close shave with very little irritation. I get about a w",great,irritation
+132,4,positive,positive,AGREE,why haven't i known about this awesome product!,this is a godsend to my eye brow tattos.  i frequently use sheet masks and the products are used to improve skin pigment,awesome,
+133,4,positive,positive,AGREE,Happy teenager,"These are super cute. A tad thin, and the colors look a little brighter in the photo than they are in person. Some look ","happy, super",
+134,4,positive,positive,AGREE,GO FOR IT!,"*For the price* this is an excellent wig. Yes, the part you can tell is a wig, and there's a lot of shine to it, but sti","excellent, pleased, awesome",
+135,4,positive,positive,AGREE,Good clay mask,"I liked this clay mask a lot. The mask cream is very thick indeed, and it takes a squeeze to get it out of the tube. It ",good,
+136,4,positive,neutral,AGREE_MILD,I am still using the product.,I  am  still using the product.,,
+137,4,positive,mixed,AGREE,Great but doesn't always stick,"These are great toothbrush holders. We received the cat, dog, panda, and turtle. My 6yo son loves the turtle and was rea",great,disappointing
+138,4,positive,mixed,AGREE,not as lot of steam out put but smells good.,"works well, not as lot of steam out put but smells good.","works, good",smells
+139,4,positive,positive,AGREE,Works well,Works well. Pain free. Easy to use. Requires 1 AA battery which is not included.,works,
+140,4,positive,positive,AGREE,Clip it,Works great for my wife and daughters hair. So far holds up to the use. Nice size and value.,"nice, great, works",
+141,4,positive,positive,AGREE,Bought as a gift,My daughter the artist was so excited. She requested the smaller pallet and loved the additional colors in this one.,loved,
+142,4,positive,mixed,AGREE,More of an oil,This is more of an oil than a serum in my opinion. It does absorb immediately and does not smell strong like many vitami,great,smells
+143,4,positive,positive,AGREE,Natural hair,I would only say to my natural hair ladies be careful as your natural hair can stick to the roller and it could pull a f,great,
+144,4,positive,positive,AGREE,Great little manicure system,Convenient with the rechargeable battery.  Nice option of unplugging the charging stand and plugging it into the nail to,"nice, great, works",
+145,4,positive,positive,AGREE,Nice piece,"The look great, a little too golden for my taste, but the pearls are great.","nice, great",
+146,4,positive,negative,MISMATCH_STRONG,Like,"I like this, the only critique I would say is on the picture shown for the description, the cosmetic bag looks more leat",,smells
+147,4,positive,positive,AGREE,Did not last,Not a good value,good,
+148,4,positive,neutral,AGREE_MILD,clean,Cleans and adds volume without being too smelly or leave a residue.,,
+149,4,positive,mixed,AGREE,Thin cheap bottles not too expensive,"At about a dollar a piece for something that cost a few cents to make it's not the best deal in the world, but it's not ",best,bad
+150,4,positive,positive,AGREE,Durable But Pick Is Too Thick,This is a good set for the money. So far no rust and the handles are sturdy. I only wish the pointed picks were a bit th,good,
+151,4,positive,positive,AGREE,Scent is great.,The scent is very nice and the liquid-creamy soap is great.,"nice, great",
+152,4,positive,neutral,AGREE_MILD,Four Stars,"The thickness of each piece is pretty inconsistent, but for the price, you can't beat it.",,
+153,4,positive,positive,AGREE,"Nice, easy, but on the small side.",Great wand--pretty curl shape. Easier to keep the hair on the wand without sliding like with a conical wand. Just be awa,"nice, great",
+154,4,positive,positive,AGREE,Perfect for Special Occasions,These nicely made lashes add drama. Perfect  for special occasions they have length and volume. The black band is flexib,"wonderful, perfect, good",
+155,4,positive,positive,AGREE,Works well too pricey,"I have used blue emu cream for several years, large jar, 12 oz, good value to me.  Tried emu/hemp cream, 4 oz jar only o","good, works",
+156,4,positive,mixed,AGREE,Creamy!,"This night cream has a good, thick consistency. It's definitely a cream and not like a balm. It has a strong scent to it","nice, good","greasy, smells"
+157,4,positive,positive,AGREE,Nice,Really happy with this brush for my toddler. Her hair is very soft and silky after brushing with this.,"nice, happy",
+158,4,positive,positive,AGREE,Fun but tangle-y,"This is a fun wig that's exactly what I expected: cute, shiny and tangles easily. But I cut it into a bob and straighten",perfect,
+159,4,positive,positive,AGREE,Just what I needed!,Moms with infants and toddlers! These are great for throwing your little girls hair up when it’s not enough to be a full,great,
+160,4,positive,neutral,AGREE_MILD,Easy to use!,It's very easy and comfortable to use in legs/arms and etc...The only issue is that the battery must last at least 2 hou,,
+161,5,positive,neutral,AGREE_MILD,pretty for a skull,"Not sure about the recipient because I bought for someone else to give as a gift, but it is very cute and pretty for a s",,
+162,5,positive,positive,AGREE,Light scents and lovely feel,"Love all the products included. I don’t usually like Spearmint but this scent was so light, I really love it!!",love,
+163,5,positive,positive,AGREE,Beautiful,Lovely accessories.  I have very short hair but bought these for when I wear a wig.  They work beautifully,beautiful,
+164,5,positive,positive,AGREE,Perfect for Even Tan,This was exactly what I was looking for to apply self-tanning lotion.  There were other alternatives that were so much m,"perfect, best",
+165,5,positive,neutral,AGREE_MILD,"Comfortable, durable, not smelly!",This is a two-pack. Could not find locally. My last two-pack lasted for years. Just shake it and let it air dry. Should ,,
+166,5,positive,positive,AGREE,Works just as expected ..,Perfect for a weekend in Vegas,"perfect, works",
+167,5,positive,positive,AGREE,Five Stars,Very good for nail clean up,good,
+168,5,positive,mixed,AGREE,Definitely recommend for the beard in your life!,"My husband and I are so in love with his Wild Willie’s Beard Elixir, so we were incredibly excited for his Wild Willie’s","super, recommend, love, loved",smells
+169,5,positive,positive,AGREE,I like it,Great quality. The makeup blends in well.,great,
+170,5,positive,positive,AGREE,I like this blush set,This product has a pretty blush color and it last on the face most of the day. I like the colors because you can wear on,recommend,
+171,5,positive,negative,MISMATCH_STRONG,Does what it supposed to do,Nothing to fancy but does work and nakes less of a mess.,,mess
+172,5,positive,positive,AGREE,Very good cleansing pads,I've got rosecea and this doesn't irritate it. Good pads which really clean your skin! I buy these at Walmart for fracti,good,
+173,5,positive,positive,AGREE,Worth the buy,"Easy to work with, good value, stretches out long",good,
+174,5,positive,mixed,AGREE,"I don't have ""broken"" hair",But I have baby-fine hair that is also curly.  I always have hair around the hairline that will NOT lay flat or blend in,great,"hate, broken"
+175,5,positive,positive,AGREE,Five Stars,Love it!,love,
+176,5,positive,positive,AGREE,Great help for sinuses,"Great help for sinuses, it can sting a bit but it is worth it if you are having sinus issues.",great,
+177,5,positive,positive,AGREE,"Not harsh, perfect for the face!",Love love love this.<br />I have a body dry brush that’s a little bit rougher and I love that the facial version is soft,"perfect, love",
+178,5,positive,positive,AGREE,It really works!,"This is the only product I have found that will cure my dry, chapped, flakey  skin.  It works wonders on everything from",works,
+179,5,positive,positive,AGREE,GREAT PRODUCT,"Very surprised on how absorbing these hair towels/caps are, have tried a few others and are no where as nice as these no","nice, great",
+180,5,positive,positive,AGREE,Love,Great product,"love, great",
+181,5,positive,positive,AGREE,"Quality hair iron, works perfectly to straighten m","This is a great hair straightener. Heats up quickly and evenly, makes it easy to take the curl out of my naturally wavy ","great, recommend, love, works",
+182,5,positive,positive,AGREE,Beautiful,Beautiful,beautiful,
+183,5,positive,positive,AGREE,The brushes are really nice. It is a great assortm,The brushes are really nice.  It is a great assortment of sizes and shapes.  The case is great .  It is such a convenien,"nice, great",
+184,5,positive,positive,AGREE,this item arrived in good condition. As far as how,this item arrived in good condition.  As far as how acurate it is not so much but close.  My doctor told me that the onl,good,
+185,5,positive,positive,AGREE,Amazing product,THIS STUFF 👌🏻 I was told this would help my glitter and face gems stay on my face at festivals. I tried it out by using ,amazing,
+186,5,positive,positive,AGREE,Convinient and Nice looking,"Used for Christmas Gifts, one for myself and one for hubby to use in his car.  Great item..","nice, great",
+187,5,positive,positive,AGREE,perfect for makeup brushes,buying another for pencils/pens,perfect,
+188,5,positive,neutral,AGREE_MILD,Five Stars,Exactly just what I needed!  Thanks so much!,,
+189,5,positive,mixed,AGREE,Quality meets style!,The best hair straightener for me. I had been using the tool for a few months now and never had any issues. It doesn't d,"great, best, love, beautiful",never
+190,5,positive,positive,AGREE,Beautiful and Functional Too!,"I love these glass spray bottles! I love the color, the size and the quality! I have a homemade shower spray in my showe","love, beautiful",
+191,5,positive,mixed,AGREE,This is a must have,I believe I have had this long enough to determine it's value. It is well worth the money. This is a must have for any b,"recommend, love",never
+192,5,positive,negative,MISMATCH_STRONG,Nails,My nails have never been better after using this,,never
+193,5,positive,positive,AGREE,Perfect !,I’m no makeup artist so the easier it is to highlight and contour is better for me ! I bought this just to try it . The ,"great, perfect, love, works",
+194,5,positive,positive,AGREE,Great product,Good product,"great, good",
+195,5,positive,neutral,AGREE_MILD,Update,"This thing did work in the beginning. I read the instructions and followed them. Made sure to clean it after each use, a",,
+196,5,positive,positive,AGREE,Nice style,Wife loves the fit and style it comes with wearing this and a mask.,nice,
+197,5,positive,positive,AGREE,Great gift!,Makes a lovely gift -- who wouldn't want this?!,great,
+198,5,positive,negative,MISMATCH_STRONG,Top Quality,These bottles are not your average travel bottles that you find in the .50 cents bin at Wal-Mart.  They are made to use.,,leak
+199,5,positive,positive,AGREE,Good product,I purchased this to use on my dogs paws. Her paws were very dry and rough. We have been using it for once a week for the,good,
+200,5,positive,positive,AGREE,Happy with the purchase,Bought as gift to a natural queen<br />She absolutely loves it,happy,

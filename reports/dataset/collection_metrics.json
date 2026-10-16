@@ -1,0 +1,152 @@
+{
+  "execution_date": "2026-10-15 16:45:18",
+  "raw_source": "All_Beauty.jsonl (McAuley-Lab/Amazon-Reviews-2023)",
+  "cleaning": {
+    "total_lines_scanned": 701528,
+    "json_errors": 0,
+    "missing_text_errors": 293,
+    "invalid_rating_errors": 0,
+    "duplicate_errors": 7272,
+    "valid_unique_records": 693963
+  },
+  "full_dataset_distribution": {
+    "total": 693963,
+    "stars": {
+      "1": 100873,
+      "2": 42592,
+      "3": 55709,
+      "4": 78579,
+      "5": 416210
+    },
+    "stars_pct": {
+      "1": 14.54,
+      "2": 6.14,
+      "3": 8.03,
+      "4": 11.32,
+      "5": 59.98
+    },
+    "sentiment": {
+      "positive": 494789,
+      "neutral": 55709,
+      "negative": 143465
+    },
+    "sentiment_pct": {
+      "positive": 71.3,
+      "neutral": 8.03,
+      "negative": 20.67
+    }
+  },
+  "natural_100k_distribution": {
+    "total": 100000,
+    "stars": {
+      "1": 11028,
+      "2": 6129,
+      "3": 9108,
+      "4": 13163,
+      "5": 60572
+    },
+    "stars_pct": {
+      "1": 11.03,
+      "2": 6.13,
+      "3": 9.11,
+      "4": 13.16,
+      "5": 60.57
+    },
+    "sentiment": {
+      "positive": 73735,
+      "neutral": 9108,
+      "negative": 17157
+    },
+    "sentiment_pct": {
+      "positive": 73.73,
+      "neutral": 9.11,
+      "negative": 17.16
+    }
+  },
+  "natural_test_20k_distribution": {
+    "total": 20000,
+    "stars": {
+      "1": 2121,
+      "2": 1213,
+      "3": 1746,
+      "4": 2656,
+      "5": 12264
+    },
+    "stars_pct": {
+      "1": 10.61,
+      "2": 6.07,
+      "3": 8.73,
+      "4": 13.28,
+      "5": 61.32
+    },
+    "sentiment": {
+      "positive": 14920,
+      "neutral": 1746,
+      "negative": 3334
+    },
+    "sentiment_pct": {
+      "positive": 74.6,
+      "neutral": 8.73,
+      "negative": 16.67
+    }
+  },
+  "natural_train_80k_distribution": {
+    "total": 80000,
+    "stars": {
+      "1": 8907,
+      "2": 4916,
+      "3": 7362,
+      "4": 10507,
+      "5": 48308
+    },
+    "stars_pct": {
+      "1": 11.13,
+      "2": 6.14,
+      "3": 9.2,
+      "4": 13.13,
+      "5": 60.38
+    },
+    "sentiment": {
+      "positive": 58815,
+      "neutral": 7362,
+      "negative": 13823
+    },
+    "sentiment_pct": {
+      "positive": 73.52,
+      "neutral": 9.2,
+      "negative": 17.28
+    }
+  },
+  "balanced_train_distribution": {
+    "total": 45000,
+    "stars": {
+      "1": 10534,
+      "2": 4466,
+      "3": 15000,
+      "4": 2378,
+      "5": 12622
+    },
+    "stars_pct": {
+      "1": 23.41,
+      "2": 9.92,
+      "3": 33.33,
+      "4": 5.28,
+      "5": 28.05
+    },
+    "sentiment": {
+      "positive": 15000,
+      "neutral": 15000,
+      "negative": 15000
+    },
+    "sentiment_pct": {
+      "positive": 33.33,
+      "neutral": 33.33,
+      "negative": 33.33
+    }
+  },
+  "train_pool_available": {
+    "positive": 479869,
+    "neutral": 53963,
+    "negative": 140131
+  }
+}

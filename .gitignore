@@ -1,0 +1,14 @@
+# Big Data Datasets (Stored on HDFS cluster: /bigdata/reviews/)
+data/raw/
+data/processed/
+*.parquet
+*.jsonl
+!data/samples/*.jsonl
+
+# Logs and temporary files
+wget-log
+*.log
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store

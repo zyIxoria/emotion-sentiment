@@ -1,0 +1,6 @@
+Class,Precision,Recall,F1_Score,Support
+positive,0.9551,0.7667,0.8506,14920
+neutral,0.2338,0.5802,0.3333,1746
+negative,0.6115,0.677,0.6426,3334
+macro_avg,0.6001,0.6746,0.6088,20000
+weighted_avg,0.8348,0.7355,0.7707,20000

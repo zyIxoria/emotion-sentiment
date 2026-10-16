@@ -1,0 +1,199 @@
+# ============================================================
+# Dataset Configuration - Amazon Reviews 2023 (All_Beauty)
+# Đồ án: Phân tích cảm xúc từ đánh giá sản phẩm trực tuyến
+# Môn: Nhập môn Big Data
+# Phiên bản: 1.0 (Giai đoạn 1 - Khảo sát dataset)
+# Ngày tạo: 2026-10-15
+# ============================================================
+
+# --- NGUỒN DỮ LIỆU ---
+dataset:
+  name: "Amazon-Reviews-2023"
+  category: "All_Beauty"
+  hf_repo: "McAuley-Lab/Amazon-Reviews-2023"
+  hf_config_name: "raw_review_All_Beauty"
+
+  # Đường dẫn tải trực tiếp (không cần thư viện datasets)
+  direct_download_url: "https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/resolve/main/raw/review_categories/All_Beauty.jsonl"
+
+  # Thông tin kích thước
+  file_size_mb: 311.5
+  total_reviews_approx: 632000
+  verified_accessible: true
+  last_checked: "2026-10-15"
+
+# --- ĐƯỜNG DẪN LƯU TRỮ ---
+paths:
+  raw_data_dir: "data/raw"
+  sample_dir: "data/samples"
+  processed_dir: "data/processed"
+  sample_file: "data/samples/all_beauty_sample_1000.jsonl"
+  reports_dir: "reports"
+
+# --- SCHEMA NGUỒN ---
+# Các trường thực tế trong dataset (đã xác minh qua dữ liệu thực)
+source_schema:
+  rating:
+    dtype: float
+    description: "Điểm đánh giá từ 1.0 đến 5.0"
+    nullable: false
+    example: 5.0
+  title:
+    dtype: string
+    description: "Tiêu đề review (ngắn)"
+    nullable: false
+    example: "Such a lovely scent but not overpowering."
+  text:
+    dtype: string
+    description: "Nội dung review (dài)"
+    nullable: false
+    example: "This spray is really nice..."
+  asin:
+    dtype: string
+    description: "Amazon Standard Identification Number của variant sản phẩm"
+    nullable: false
+    example: "B00YQ6X8EO"
+  parent_asin:
+    dtype: string
+    description: "ASIN của sản phẩm cha (dùng làm product_id)"
+    nullable: false
+    example: "B00YQ6X8EO"
+  user_id:
+    dtype: string
+    description: "ID người dùng (ẩn danh)"
+    nullable: false
+    example: "AGKHLEW2SOWHNMFQIJGBECAF7INQ"
+  timestamp:
+    dtype: int64
+    description: "Unix timestamp tính bằng milli-giây"
+    nullable: false
+    example: 1588687728923
+  helpful_vote:
+    dtype: int
+    description: "Số lượt bình chọn 'helpful'"
+    nullable: false
+    example: 0
+  verified_purchase:
+    dtype: bool
+    description: "True nếu là mua hàng đã xác thực"
+    nullable: false
+    example: true
+  images:
+    dtype: list
+    description: "Danh sách URL ảnh kèm review (thường rỗng)"
+    nullable: true
+    note: "78.9% bản ghi không có ảnh, không dùng cho NLP"
+
+  # Trường KHÔNG CÓ trong schema đã kiểm tra:
+  # - review_id: Không có trong nguồn, cần tạo ID nội bộ
+  # - helpful_votes: Không có (tên thực là helpful_vote)
+
+# --- SCHEMA CHUẨN HÓA CHO PIPELINE ---
+pipeline_schema:
+  review_id:
+    source: "generated"
+    description: "ID nội bộ ổn định (hash của user_id + asin + timestamp)"
+    note: "Không đánh số tùy tiện để đảm bảo tính tái lập"
+  product_id:
+    source: "parent_asin"
+    description: "Mã sản phẩm"
+  review_text:
+    source: "concat(title, text)"
+    description: "Nội dung kết hợp: title + ' ' + text"
+    separator: " "
+  rating:
+    source: "rating"
+    description: "Điểm đánh giá gốc (float, 1.0-5.0)"
+  review_timestamp:
+    source: "timestamp"
+    description: "Unix timestamp (ms)"
+  review_date:
+    source: "timestamp / 1000 → datetime"
+    description: "Ngày đánh giá (chuyển đổi từ ms timestamp)"
+  sentiment:
+    source: "derived from rating"
+    description: "Nhãn 3 lớp tạo ở bước tiền xử lý"
+
+# --- QUY TẮC CHUYỂN ĐỔI NHÃN SENTIMENT ---
+sentiment_mapping:
+  rules:
+    negative:
+      rating_range: [1, 2]
+      description: "Rating 1 hoặc 2 sao"
+    neutral:
+      rating_range: [3, 3]
+      description: "Rating 3 sao"
+    positive:
+      rating_range: [4, 5]
+      description: "Rating 4 hoặc 5 sao"
+  
+  # Lưu ý quan trọng
+  notes:
+    - "Đây là nhãn suy ra từ rating, KHÔNG phải nhãn cảm xúc chuyên gia"
+    - "Nguy cơ: 76.3% dữ liệu là positive → lệch lớp nghiêm trọng"
+    - "Cần áp dụng class balancing khi huấn luyện mô hình"
+
+# --- QUY MÔ DỮ LIỆU ---
+data_scale:
+  smoke_test:
+    n_reviews: 1000
+    description: "Kiểm tra script và pipeline"
+    status: "READY (đã có tại data/samples/)"
+  
+  pipeline_test:
+    n_reviews: 25000
+    description: "Kiểm tra toàn bộ pipeline"
+    estimated_file_mb: 12.3
+    note: "Tải khoảng 12MB từ 311MB file"
+  
+  initial_benchmark:
+    n_reviews: 50000
+    description: "Benchmark ban đầu"
+    estimated_file_mb: 24.6
+  
+  main_experiment:
+    n_reviews: 100000
+    description: "Bộ thực nghiệm chính (đề xuất)"
+    estimated_file_mb: 49.2
+    reason: "Đủ dữ liệu cho 3 lớp, phù hợp RAM 8-16GB"
+  
+  extended:
+    n_reviews: 200000
+    description: "Mở rộng nếu tài nguyên cho phép"
+    estimated_file_mb: 98.4
+    condition: "Chỉ mở rộng nếu pipeline chạy ổn trên 100K"
+
+# --- THÔNG SỐ TIỀN XỬ LÝ DỰ KIẾN ---
+preprocessing:
+  text:
+    lowercase: true
+    remove_html_tags: true
+    remove_special_chars: true
+    min_word_count: 3  # Loại bỏ review quá ngắn
+    max_word_count: 500  # Giới hạn độ dài đầu vào
+  
+  class_balancing:
+    strategy: "undersampling"
+    note: "Do positive chiếm 76.3%, cần cân bằng trước khi train"
+    alternatives:
+      - "oversampling (SMOTE/duplication)"
+      - "class_weight trong sklearn"
+  
+  train_val_test_split: [0.7, 0.15, 0.15]
+
+# --- YÊU CẦU MÔI TRƯỜNG ---
+environment:
+  python_version: "3.13.0"
+  os: "Windows 11 / WSL2 Ubuntu 24.04"
+  required_libraries:
+    - "requests>=2.34.0"
+    - "pandas>=2.0.0"
+    - "datasets>=2.x (với trust_remote_code) HOẶC urllib (không cần datasets)"
+  
+  big_data_stack:
+    spark: "PySpark (Giai đoạn 2)"
+    hdfs: "Hadoop HDFS trên WSL2 (Giai đoạn 2)"
+    note: "CHƯA cài đặt trong Giai đoạn 1"
+
+# --- KHÔNG LƯU Ở ĐÂY ---
+# Token, API key, thông tin xác thực không được lưu trong config này

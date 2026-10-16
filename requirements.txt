@@ -1,0 +1,10 @@
+# Python Dependencies for Big Data Emotion Sentiment Project
+# Môi trường: Ubuntu 24.04 (WSL2) & Windows 11
+
+pyspark==3.5.5
+scikit-learn>=1.3.0
+pandas>=2.0.0
+numpy>=1.24.0
+pyyaml>=6.0
+requests>=2.30.0
+pyarrow>=14.0.0

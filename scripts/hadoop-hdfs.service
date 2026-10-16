@@ -1,0 +1,19 @@
+[Unit]
+Description=Hadoop HDFS Daemons (NameNode, DataNode, SecondaryNameNode)
+After=network.target ssh.service
+Wants=ssh.service
+
+[Service]
+Type=forking
+User=tzy
+Environment="JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64"
+Environment="HADOOP_HOME=/opt/hadoop"
+Environment="HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop"
+ExecStart=/opt/hadoop/sbin/start-dfs.sh
+ExecStop=/opt/hadoop/sbin/stop-dfs.sh
+Restart=on-failure
+RestartSec=5
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
