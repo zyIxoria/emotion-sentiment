@@ -1,0 +1,89 @@
+[2026-10-16 10:55:33] ================================================================================
+[2026-10-16 10:55:33]  BẮT ĐẦU GIAI ĐOẠN 4: THÍ NGHIỆM TỐI ƯU HÓA MÔ HÌNH PHÂN LOẠI CẢM XÚC
+[2026-10-16 10:55:33] ================================================================================
+[2026-10-16 10:55:33] [1/7] Khởi tạo SparkSession kết nối HDFS...
+[2026-10-16 10:55:41] ✓ SparkSession active: master=local[4], driver-memory=4g, HDFS=hdfs://localhost:9000
+[2026-10-16 10:55:41] 
+[2/7] Nạp dữ liệu từ HDFS...
+[2026-10-16 10:55:50] ✓ Nạp xong trong 8.64s: Balanced Train=45,000 dòng, Natural Test=20,000 dòng
+[2026-10-16 10:55:50] 
+[3/7] Phân chia Stratified Train (80%) / Validation (20%) split...
+[2026-10-16 10:55:55] ✓ Train Split      : 36,251 mẫu {0: 12087, 1: 12085, 2: 12079}
+[2026-10-16 10:55:55] ✓ Validation Split : 8,749 mẫu {0: 2913, 1: 2915, 2: 2921}
+[2026-10-16 10:55:57]   - Overlap Train/Val : 0 (100% isolated)
+[2026-10-16 10:55:57]   - Overlap Train/Test: 0 (100% isolated)
+[2026-10-16 10:55:57]   - Overlap Val/Test  : 0 (100% isolated)
+[2026-10-16 10:55:57]   - StopWordsRemover: English (181 từ dừng chuẩn)
+[2026-10-16 10:55:57] 
+[4/7] Bắt đầu huấn luyện và đánh giá 8 cấu hình trên Validation Split...
+[2026-10-16 10:55:57] 
+---> Đang thực thi M0_Baseline: TF-IDF (10k) + LogisticRegression (reg=0.01)...
+[2026-10-16 10:56:13]   ✓ M0_Baseline hoàn tất: Fit=12.81s | Val Accuracy=68.60% | Macro F1=68.48% | Neutral F1=58.99%
+[2026-10-16 10:56:13]     Precision/Recall/F1: Pos=75.90% | Neu=58.99% (P=60.68%, R=57.39%) | Neg=70.55%
+[2026-10-16 10:56:13] 
+---> Đang thực thi M1_Ngram: Unigram + Bigram (20k) + LogisticRegression (reg=0.01)...
+[2026-10-16 10:56:34]   ✓ M1_Ngram hoàn tất: Fit=19.56s | Val Accuracy=66.36% | Macro F1=66.37% | Neutral F1=57.53%
+[2026-10-16 10:56:34]     Precision/Recall/F1: Pos=73.92% | Neu=57.53% (P=57.81%, R=57.26%) | Neg=67.65%
+[2026-10-16 10:56:34] 
+---> Đang thực thi M2a_LR_reg001: TF-IDF + LogisticRegression (reg=0.001)...
+[2026-10-16 10:56:45]   ✓ M2a_LR_reg001 hoàn tất: Fit=11.07s | Val Accuracy=66.09% | Macro F1=66.01% | Neutral F1=56.31%
+[2026-10-16 10:56:45]     Precision/Recall/F1: Pos=73.41% | Neu=56.31% (P=57.37%, R=55.30%) | Neg=68.29%
+[2026-10-16 10:56:45] 
+---> Đang thực thi M2b_LR_reg01: TF-IDF + LogisticRegression (reg=0.1)...
+[2026-10-16 10:56:51]   ✓ M2b_LR_reg01 hoàn tất: Fit=5.51s | Val Accuracy=70.74% | Macro F1=70.60% | Neutral F1=61.48%
+[2026-10-16 10:56:51]     Precision/Recall/F1: Pos=78.23% | Neu=61.48% (P=63.73%, R=59.38%) | Neg=72.10%
+[2026-10-16 10:56:51] 
+---> Đang thực thi M2c_LR_elastic: TF-IDF + LogisticRegression (reg=0.01, elasticNet=0.5)...
+[2026-10-16 10:57:01]   ✓ M2c_LR_elastic hoàn tất: Fit=8.57s | Val Accuracy=72.00% | Macro F1=71.66% | Neutral F1=62.17%
+[2026-10-16 10:57:01]     Precision/Recall/F1: Pos=78.23% | Neu=62.17% (P=68.01%, R=57.26%) | Neg=74.57%
+[2026-10-16 10:57:01] 
+---> Đang thực thi M3a_Weight1.3: TF-IDF + LogisticRegression (Neutral Weight = 1.3)...
+[2026-10-16 10:57:09]   ✓ M3a_Weight1.3 hoàn tất: Fit=7.68s | Val Accuracy=68.49% | Macro F1=68.60% | Neutral F1=60.63%
+[2026-10-16 10:57:09]     Precision/Recall/F1: Pos=75.58% | Neu=60.63% (P=59.01%, R=62.33%) | Neg=69.58%
+[2026-10-16 10:57:09] 
+---> Đang thực thi M3b_Weight1.5: TF-IDF + LogisticRegression (Neutral Weight = 1.5)...
+[2026-10-16 10:57:15]   ✓ M3b_Weight1.5 hoàn tất: Fit=7.34s | Val Accuracy=68.38% | Macro F1=68.57% | Neutral F1=61.05%
+[2026-10-16 10:57:15]     Precision/Recall/F1: Pos=75.68% | Neu=61.05% (P=58.15%, R=64.25%) | Neg=68.98%
+[2026-10-16 10:57:15] 
+---> Đang thực thi M4_NaiveBayes: TF-IDF + Multinomial Naive Bayes (smooth=1.0)...
+[2026-10-16 10:57:18]   ✓ M4_NaiveBayes hoàn tất: Fit=1.8s | Val Accuracy=68.40% | Macro F1=68.44% | Neutral F1=59.93%
+[2026-10-16 10:57:18]     Precision/Recall/F1: Pos=75.74% | Neu=59.93% (P=59.23%, R=60.65%) | Neg=69.64%
+[2026-10-16 10:57:18] 
+[5/7] So sánh và phân tích xếp hạng các mô hình trên Validation Split...
+[2026-10-16 10:57:18] ================================================================================
+[2026-10-16 10:57:18]  XẾP HẠNG MÔ HÌNH THEO MACRO F1 (VALIDATION SET):
+[2026-10-16 10:57:18]   #1: M2c_LR_elastic  | Macro F1 = 71.66% | Acc = 72.00% | Neu F1 = 62.17% (P=68.01%, R=57.26%) | Time=8.57s
+[2026-10-16 10:57:18]   #2: M2b_LR_reg01    | Macro F1 = 70.60% | Acc = 70.74% | Neu F1 = 61.48% (P=63.73%, R=59.38%) | Time=5.51s
+[2026-10-16 10:57:18]   #3: M3a_Weight1.3   | Macro F1 = 68.60% | Acc = 68.49% | Neu F1 = 60.63% (P=59.01%, R=62.33%) | Time=7.68s
+[2026-10-16 10:57:18]   #4: M3b_Weight1.5   | Macro F1 = 68.57% | Acc = 68.38% | Neu F1 = 61.05% (P=58.15%, R=64.25%) | Time=7.34s
+[2026-10-16 10:57:18]   #5: M0_Baseline     | Macro F1 = 68.48% | Acc = 68.60% | Neu F1 = 58.99% (P=60.68%, R=57.39%) | Time=12.81s
+[2026-10-16 10:57:18]   #6: M4_NaiveBayes   | Macro F1 = 68.44% | Acc = 68.40% | Neu F1 = 59.93% (P=59.23%, R=60.65%) | Time=1.8s
+[2026-10-16 10:57:18]   #7: M1_Ngram        | Macro F1 = 66.37% | Acc = 66.36% | Neu F1 = 57.53% (P=57.81%, R=57.26%) | Time=19.56s
+[2026-10-16 10:57:18]   #8: M2a_LR_reg001   | Macro F1 = 66.01% | Acc = 66.09% | Neu F1 = 56.31% (P=57.37%, R=55.30%) | Time=11.07s
+[2026-10-16 10:57:18] ================================================================================
+[2026-10-16 10:57:18] 🏆 MÔ HÌNH ĐƯỢC CHỌN: M2c_LR_elastic (TF-IDF + LogisticRegression (reg=0.01, elasticNet=0.5)) với Macro F1 Validation = 71.66%
+[2026-10-16 10:57:18] 
+[6/7] Huấn luyện lại M2c_LR_elastic trên TOÀN BỘ 45.000 mẫu Balanced Train...
+[2026-10-16 10:57:24] ✓ Huấn luyện lại hoàn tất trên 45.000 mẫu trong: 6.24 giây
+[2026-10-16 10:57:24] 
+[7/7] Đánh giá cuối cùng trên Natural Test Set (20.000 mẫu)...
+[2026-10-16 10:57:26] ================================================================================
+[2026-10-16 10:57:26]  KẾT QUẢ ĐÁNH GIÁ CUỐI CÙNG TRÊN NATURAL TEST SET (20.000 MẪU):
+[2026-10-16 10:57:26]   Accuracy           : 75.40%
+[2026-10-16 10:57:26]   Macro F1-score     : 63.02%
+[2026-10-16 10:57:26]   Weighted F1-score  : 78.33%
+[2026-10-16 10:57:26]   Macro Prec / Recall: 60.98% / 70.02%
+[2026-10-16 10:57:26]   Positive (0) F1    : 85.73% (P=95.86%, R=77.53%)
+[2026-10-16 10:57:26]   Neutral  (1) F1    : 35.91% (P=26.21%, R=56.99%)
+[2026-10-16 10:57:26]   Negative (2) F1    : 67.42% (P=60.88%, R=75.52%)
+[2026-10-16 10:57:26] ================================================================================
+[2026-10-16 10:57:26] 
+Đang lưu Best Model lên HDFS...
+[2026-10-16 10:57:36] ✓ Đã lưu Best Model thành công tại: hdfs://localhost:9000/bigdata/models/phase4_best_model
+[2026-10-16 10:57:36] ✓ Đã lưu Metrics CSV tại: /mnt/d/Filehoc/big-data/emotion-sentiment/reports/models/phase4_metrics.csv
+[2026-10-16 10:57:36] ✓ Đã lưu cấu hình JSON tại: /mnt/d/Filehoc/big-data/emotion-sentiment/reports/models/phase4_experiment_config.json
+[2026-10-16 10:57:36] ✓ Đã xuất Báo cáo so sánh Markdown tại: /mnt/d/Filehoc/big-data/emotion-sentiment/reports/models/phase4_model_comparison.md
+[2026-10-16 10:57:37] ✓ Đã đóng SparkSession an toàn.
+[2026-10-16 10:57:37] ================================================================================
+[2026-10-16 10:57:37]  HOÀN TẤT TOÀN BỘ GIAI ĐOẠN 4 TRONG 126.37 GIÂY
+[2026-10-16 10:57:37] ================================================================================

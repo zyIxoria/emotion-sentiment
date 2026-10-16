@@ -226,8 +226,51 @@ python3 /mnt/d/Filehoc/big-data/emotion-sentiment/scripts/train_baseline_lr_tfid
 
 ---
 
-## 8. Kết luận và Kế hoạch Phase 4
-Phase 3 đã hoàn tất **PASS** 100%. Hệ thống đã lưu lại baseline benchmark đáng tin cậy trên HDFS.
-Kế hoạch tiếp theo:
-1. Thử nghiệm các mô hình cải tiến (n-gram, class weights, Naive Bayes, GBT).
-2. Xây dựng ứng dụng Web Dashboard trực quan hóa (Streamlit + Plotly).
+## 8. Phase 4 — Cải thiện và Tối ưu Mô hình Phân loại Cảm xúc (PySpark MLlib)
+
+### 8.1. Quy trình Thực nghiệm Khoa học & Cách ly Dữ liệu (Strict Data Isolation)
+- **Tập Balanced Train (45.000 mẫu)** được chia thành:
+  - **Train Split (80% - 36.251 mẫu)**: Dùng để fit tất cả các kiến trúc thử nghiệm.
+  - **Validation Split (20% - 8.749 mẫu)**: Dùng để so sánh công bằng và lựa chọn mô hình dựa trên **Macro F1-score**.
+- **Tập Natural Test (20.000 mẫu)**: Được cách ly 100%, tuyệt đối không tham gia vào tuning hay lựa chọn mô hình, chỉ dùng để đánh giá kiểm chứng cuối cùng một lần duy nhất.
+
+### 8.2. Bảng Xếp hạng Hiệu năng trên Validation Split (8.749 mẫu)
+
+| Mô hình | Thuật toán & Đặc trưng | Accuracy | **Macro F1** | Neutral F1 | Thời gian Fit |
+|---|---|:---:|:---:|:---:|:---:|
+| **`M2c_LR_elastic`** 🏆 | TF-IDF (10k) + LR (`reg=0.01`, `elasticNet=0.5`) | `72.00%` | **`71.66%`** | **`62.17%`** | `8.57s` |
+| **`M2b_LR_reg01`** | TF-IDF (10k) + LR (`reg=0.1`, L2) | `70.74%` | `70.60%` | `61.48%` | `5.51s` |
+| **`M3a_Weight1.3`** | TF-IDF (10k) + LR (`weight Neutral = 1.3`) | `68.49%` | `68.60%` | `60.63%` | `7.68s` |
+| **`M3b_Weight1.5`** | TF-IDF (10k) + LR (`weight Neutral = 1.5`) | `68.38%` | `68.57%` | `61.05%` | `7.34s` |
+| **`M0_Baseline`** | TF-IDF (10k) + LR (`reg=0.01`, L2) | `68.60%` | `68.48%` | `58.99%` | `12.81s` |
+| **`M4_NaiveBayes`** | TF-IDF (10k) + Multinomial Naive Bayes | `68.40%` | `68.44%` | `59.93%` | `1.80s` |
+| **`M1_Ngram`** | Unigram + Bigram (20k feats) + LR | `66.36%` | `66.37%` | `57.53%` | `19.56s` |
+| **`M2a_LR_reg001`** | TF-IDF (10k) + LR (`reg=0.001`, L2) | `66.09%` | `66.01%` | `56.31%` | `11.07s` |
+
+### 8.3. Kết quả Đối đầu trên Natural Test Set (20.000 mẫu Độc lập)
+
+Mô hình chiến thắng **`M2c_LR_elastic`** sau khi được fit lại trên toàn bộ 45.000 mẫu Balanced Train đạt hiệu năng vượt trội toàn diện so với Baseline:
+
+| Chỉ số đánh giá | Baseline (Phase 3) | **Best Model (M2c_LR_elastic)** | Mức tăng trưởng (Delta) |
+|---|:---:|:---:|:---:|
+| **Accuracy** | `73.55%` | **`75.40%`** | **`+1.85%`** 🟢 |
+| **Macro F1-score** | `60.88%` | **`63.02%`** | **`+2.14%`** 🟢 |
+| **Weighted F1-score** | `77.07%` | **`78.33%`** | **`+1.26%`** 🟢 |
+| **Positive F1 (0)** | `85.06%` | **`85.73%`** | **`+0.67%`** 🟢 |
+| **Neutral F1 (1)** | `33.33%` | **`35.91%`** | **`+2.58%`** 🟢 |
+| **Negative F1 (2)** | `64.26%` | **`67.42%`** | **`+3.16%`** 🟢 |
+
+### 8.4. Lưu trữ Mô hình và Báo cáo Phase 4
+- **Best Model Pipeline trên HDFS:** `hdfs://localhost:9000/bigdata/models/phase4_best_model/`
+- **Báo cáo so sánh Markdown:** `reports/models/phase4_model_comparison.md`
+- **Thống kê Metrics tổng hợp CSV:** `reports/models/phase4_metrics.csv`
+- **Thư mục Ma trận nhầm lẫn chi tiết:** `reports/models/phase4_confusion_matrices/`
+- **Tệp cấu hình & Metadata:** `reports/models/phase4_experiment_config.json`
+- **Log thực thi toàn trình:** `reports/models/phase4_experiment_log.txt`
+
+---
+
+## 9. Kế hoạch Giai đoạn tiếp theo (Phase 5)
+1. Xây dựng ứng dụng Web Dashboard trực quan hóa tương tác (**Streamlit + Plotly**).
+2. Tích hợp trực tiếp với PySpark MLlib Pipeline hoặc trích xuất trọng số phục vụ real-time sentiment inference.
+3. Trực quan hóa ma trận nhầm lẫn, phân phối độ tin cậy và demo phân tích sắc thái cảm xúc từ người dùng nhập vào.

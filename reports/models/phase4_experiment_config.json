@@ -1,0 +1,473 @@
+{
+  "timestamp": "2026-10-16 10:57:36",
+  "seed": 42,
+  "split_ratio": {
+    "train": 0.8,
+    "validation": 0.2
+  },
+  "datasets": {
+    "balanced_train_total": 45000,
+    "train_split": 36251,
+    "validation_split": 8749,
+    "natural_test": 20000
+  },
+  "experiments_summary": [
+    {
+      "dataset": "Validation",
+      "sample_count": 8749,
+      "accuracy": 0.686,
+      "macro_f1": 0.6848,
+      "macro_precision": 0.6841,
+      "macro_recall": 0.686,
+      "weighted_f1": 0.6848,
+      "weighted_precision": 0.6841,
+      "weighted_recall": 0.686,
+      "positive": {
+        "precision": 0.7526,
+        "recall": 0.7655,
+        "f1": 0.759,
+        "support": 2913
+      },
+      "neutral": {
+        "precision": 0.6068,
+        "recall": 0.5739,
+        "f1": 0.5899,
+        "support": 2915
+      },
+      "negative": {
+        "precision": 0.693,
+        "recall": 0.7186,
+        "f1": 0.7055,
+        "support": 2921
+      },
+      "confusion_matrix": [
+        [
+          2230,
+          472,
+          211
+        ],
+        [
+          523,
+          1673,
+          719
+        ],
+        [
+          210,
+          612,
+          2099
+        ]
+      ],
+      "exp_id": "M0_Baseline",
+      "description": "TF-IDF (10k) + LogisticRegression (reg=0.01)",
+      "fit_seconds": 12.81,
+      "predict_seconds": 0.97
+    },
+    {
+      "dataset": "Validation",
+      "sample_count": 8749,
+      "accuracy": 0.6636,
+      "macro_f1": 0.6637,
+      "macro_precision": 0.664,
+      "macro_recall": 0.6636,
+      "weighted_f1": 0.6637,
+      "weighted_precision": 0.664,
+      "weighted_recall": 0.6636,
+      "positive": {
+        "precision": 0.7478,
+        "recall": 0.7309,
+        "f1": 0.7392,
+        "support": 2913
+      },
+      "neutral": {
+        "precision": 0.5781,
+        "recall": 0.5726,
+        "f1": 0.5753,
+        "support": 2915
+      },
+      "negative": {
+        "precision": 0.666,
+        "recall": 0.6874,
+        "f1": 0.6765,
+        "support": 2921
+      },
+      "confusion_matrix": [
+        [
+          2129,
+          514,
+          270
+        ],
+        [
+          509,
+          1669,
+          737
+        ],
+        [
+          209,
+          704,
+          2008
+        ]
+      ],
+      "exp_id": "M1_Ngram",
+      "description": "Unigram + Bigram (20k) + LogisticRegression (reg=0.01)",
+      "fit_seconds": 19.56,
+      "predict_seconds": 1.3
+    },
+    {
+      "dataset": "Validation",
+      "sample_count": 8749,
+      "accuracy": 0.6609,
+      "macro_f1": 0.6601,
+      "macro_precision": 0.6595,
+      "macro_recall": 0.6609,
+      "weighted_f1": 0.6601,
+      "weighted_precision": 0.6594,
+      "weighted_recall": 0.6609,
+      "positive": {
+        "precision": 0.7299,
+        "recall": 0.7384,
+        "f1": 0.7341,
+        "support": 2913
+      },
+      "neutral": {
+        "precision": 0.5737,
+        "recall": 0.553,
+        "f1": 0.5631,
+        "support": 2915
+      },
+      "negative": {
+        "precision": 0.6748,
+        "recall": 0.6912,
+        "f1": 0.6829,
+        "support": 2921
+      },
+      "confusion_matrix": [
+        [
+          2151,
+          511,
+          251
+        ],
+        [
+          581,
+          1612,
+          722
+        ],
+        [
+          215,
+          687,
+          2019
+        ]
+      ],
+      "exp_id": "M2a_LR_reg001",
+      "description": "TF-IDF + LogisticRegression (reg=0.001)",
+      "fit_seconds": 11.07,
+      "predict_seconds": 0.7
+    },
+    {
+      "dataset": "Validation",
+      "sample_count": 8749,
+      "accuracy": 0.7074,
+      "macro_f1": 0.706,
+      "macro_precision": 0.7055,
+      "macro_recall": 0.7074,
+      "weighted_f1": 0.706,
+      "weighted_precision": 0.7055,
+      "weighted_recall": 0.7074,
+      "positive": {
+        "precision": 0.7758,
+        "recall": 0.7889,
+        "f1": 0.7823,
+        "support": 2913
+      },
+      "neutral": {
+        "precision": 0.6373,
+        "recall": 0.5938,
+        "f1": 0.6148,
+        "support": 2915
+      },
+      "negative": {
+        "precision": 0.7034,
+        "recall": 0.7395,
+        "f1": 0.721,
+        "support": 2921
+      },
+      "confusion_matrix": [
+        [
+          2298,
+          418,
+          197
+        ],
+        [
+          470,
+          1731,
+          714
+        ],
+        [
+          194,
+          567,
+          2160
+        ]
+      ],
+      "exp_id": "M2b_LR_reg01",
+      "description": "TF-IDF + LogisticRegression (reg=0.1)",
+      "fit_seconds": 5.51,
+      "predict_seconds": 0.6
+    },
+    {
+      "dataset": "Validation",
+      "sample_count": 8749,
+      "accuracy": 0.72,
+      "macro_f1": 0.7166,
+      "macro_precision": 0.7184,
+      "macro_recall": 0.7199,
+      "weighted_f1": 0.7166,
+      "weighted_precision": 0.7184,
+      "weighted_recall": 0.72,
+      "positive": {
+        "precision": 0.7746,
+        "recall": 0.7903,
+        "f1": 0.7823,
+        "support": 2913
+      },
+      "neutral": {
+        "precision": 0.6801,
+        "recall": 0.5726,
+        "f1": 0.6217,
+        "support": 2915
+      },
+      "negative": {
+        "precision": 0.7006,
+        "recall": 0.797,
+        "f1": 0.7457,
+        "support": 2921
+      },
+      "confusion_matrix": [
+        [
+          2302,
+          365,
+          246
+        ],
+        [
+          497,
+          1669,
+          749
+        ],
+        [
+          173,
+          420,
+          2328
+        ]
+      ],
+      "exp_id": "M2c_LR_elastic",
+      "description": "TF-IDF + LogisticRegression (reg=0.01, elasticNet=0.5)",
+      "fit_seconds": 8.57,
+      "predict_seconds": 0.69
+    },
+    {
+      "dataset": "Validation",
+      "sample_count": 8749,
+      "accuracy": 0.6849,
+      "macro_f1": 0.686,
+      "macro_precision": 0.6875,
+      "macro_recall": 0.6849,
+      "weighted_f1": 0.686,
+      "weighted_precision": 0.6875,
+      "weighted_recall": 0.6849,
+      "positive": {
+        "precision": 0.7649,
+        "recall": 0.747,
+        "f1": 0.7558,
+        "support": 2913
+      },
+      "neutral": {
+        "precision": 0.5901,
+        "recall": 0.6233,
+        "f1": 0.6063,
+        "support": 2915
+      },
+      "negative": {
+        "precision": 0.7076,
+        "recall": 0.6844,
+        "f1": 0.6958,
+        "support": 2921
+      },
+      "confusion_matrix": [
+        [
+          2176,
+          539,
+          198
+        ],
+        [
+          470,
+          1817,
+          628
+        ],
+        [
+          199,
+          723,
+          1999
+        ]
+      ],
+      "exp_id": "M3a_Weight1.3",
+      "description": "TF-IDF + LogisticRegression (Neutral Weight = 1.3)",
+      "fit_seconds": 7.68,
+      "predict_seconds": 0.59
+    },
+    {
+      "dataset": "Validation",
+      "sample_count": 8749,
+      "accuracy": 0.6838,
+      "macro_f1": 0.6857,
+      "macro_precision": 0.6893,
+      "macro_recall": 0.6839,
+      "weighted_f1": 0.6857,
+      "weighted_precision": 0.6893,
+      "weighted_recall": 0.6838,
+      "positive": {
+        "precision": 0.7728,
+        "recall": 0.7415,
+        "f1": 0.7568,
+        "support": 2913
+      },
+      "neutral": {
+        "precision": 0.5815,
+        "recall": 0.6425,
+        "f1": 0.6105,
+        "support": 2915
+      },
+      "negative": {
+        "precision": 0.7135,
+        "recall": 0.6676,
+        "f1": 0.6898,
+        "support": 2921
+      },
+      "confusion_matrix": [
+        [
+          2160,
+          566,
+          187
+        ],
+        [
+          446,
+          1873,
+          596
+        ],
+        [
+          189,
+          782,
+          1950
+        ]
+      ],
+      "exp_id": "M3b_Weight1.5",
+      "description": "TF-IDF + LogisticRegression (Neutral Weight = 1.5)",
+      "fit_seconds": 7.34,
+      "predict_seconds": 0.52
+    },
+    {
+      "dataset": "Validation",
+      "sample_count": 8749,
+      "accuracy": 0.684,
+      "macro_f1": 0.6844,
+      "macro_precision": 0.6849,
+      "macro_recall": 0.684,
+      "weighted_f1": 0.6843,
+      "weighted_precision": 0.6849,
+      "weighted_recall": 0.684,
+      "positive": {
+        "precision": 0.7571,
+        "recall": 0.7576,
+        "f1": 0.7574,
+        "support": 2913
+      },
+      "neutral": {
+        "precision": 0.5923,
+        "recall": 0.6065,
+        "f1": 0.5993,
+        "support": 2915
+      },
+      "negative": {
+        "precision": 0.7052,
+        "recall": 0.6878,
+        "f1": 0.6964,
+        "support": 2921
+      },
+      "confusion_matrix": [
+        [
+          2207,
+          527,
+          179
+        ],
+        [
+          486,
+          1768,
+          661
+        ],
+        [
+          222,
+          690,
+          2009
+        ]
+      ],
+      "exp_id": "M4_NaiveBayes",
+      "description": "TF-IDF + Multinomial Naive Bayes (smooth=1.0)",
+      "fit_seconds": 1.8,
+      "predict_seconds": 0.59
+    }
+  ],
+  "best_model_selection": {
+    "selected_exp_id": "M2c_LR_elastic",
+    "selection_criterion": "Highest Macro F1 on Validation Split",
+    "validation_macro_f1": 0.7166,
+    "final_test_metrics": {
+      "dataset": "Natural Test (20k)",
+      "sample_count": 20000,
+      "accuracy": 0.754,
+      "macro_f1": 0.6302,
+      "macro_precision": 0.6098,
+      "macro_recall": 0.7002,
+      "weighted_f1": 0.7833,
+      "weighted_precision": 0.8395,
+      "weighted_recall": 0.754,
+      "positive": {
+        "precision": 0.9586,
+        "recall": 0.7753,
+        "f1": 0.8573,
+        "support": 14920
+      },
+      "neutral": {
+        "precision": 0.2621,
+        "recall": 0.5699,
+        "f1": 0.3591,
+        "support": 1746
+      },
+      "negative": {
+        "precision": 0.6088,
+        "recall": 0.7552,
+        "f1": 0.6742,
+        "support": 3334
+      },
+      "confusion_matrix": [
+        [
+          11568,
+          2191,
+          1161
+        ],
+        [
+          294,
+          995,
+          457
+        ],
+        [
+          206,
+          610,
+          2518
+        ]
+      ],
+      "exp_id": "M2c_LR_elastic_FinalTest",
+      "description": "Final evaluation of M2c_LR_elastic on Natural Test",
+      "fit_seconds": 6.24,
+      "predict_seconds": 1.09
+    },
+    "hdfs_model_path": "hdfs://localhost:9000/bigdata/models/phase4_best_model",
+    "model_saved_successfully": true
+  }
+}
