@@ -64,6 +64,9 @@ emotion-sentiment/
 
 ## 3. Cấu trúc lưu trữ dữ liệu trên Hadoop HDFS
 
+> [!NOTE]
+> **Quy chuẩn lưu trữ Big Data:** Theo tiêu chuẩn thiết kế hệ thống dữ liệu lớn, mã nguồn, cấu hình và báo cáo được theo dõi qua Git, trong khi các tệp dữ liệu lớn (>300 MB) được lưu trữ trực tiếp trên cụm phân tán **Hadoop HDFS** và tải về từ nguồn chính thức **Hugging Face Hub** (tránh làm phình to repo Git và vượt giới hạn 100 MB của GitHub).
+
 Hệ thống lưu trữ trên HDFS (`hdfs://localhost:9000`) được tổ chức phân cấp chuẩn:
 
 ```text
@@ -81,6 +84,18 @@ hdfs://localhost:9000/
         │   └── all_beauty_balanced_train.parquet (Parquet nén Snappy - 45.000 dòng)
         └── test/
             └── (Thư mục phục vụ các kiểm thử tạm thời)
+```
+
+### Hướng dẫn tải Dataset gốc từ Hugging Face
+Nếu tái tạo môi trường trên máy mới, bạn có thể tải tệp gốc bằng một lệnh đơn giản:
+
+```bash
+# Tải toàn bộ 701.528 review gốc (311.5 MB) từ McAuley-Lab / Hugging Face:
+mkdir -p data/raw
+wget -c "https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/resolve/main/raw/review_categories/All_Beauty.jsonl" -O data/raw/All_Beauty_full.jsonl
+
+# Hoặc dùng aria2c để tăng tốc đa luồng:
+aria2c -x 4 -s 4 "https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023/resolve/main/raw/review_categories/All_Beauty.jsonl" -d data/raw -o All_Beauty_full.jsonl
 ```
 
 ---
