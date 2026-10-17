@@ -30,8 +30,8 @@ echo "[1/6] Cài đặt OpenJDK 11..."
 if java -version 2>/dev/null | grep -q "11\|17\|21"; then
     echo "    ✓ Java đã được cài (bỏ qua)"
 else
-    sudo apt-get install -y openjdk-11-jdk -qq
-    echo "    ✓ Java 11 đã cài xong"
+    sudo apt-get install -y openjdk-11-jdk python3-pip python3-venv openssh-server openssh-client -qq
+    echo "    ✓ Java 11 & Python tools đã cài xong"
 fi
 
 JAVA_PATH=$(readlink -f /usr/bin/java | sed 's|/bin/java||')
@@ -223,12 +223,11 @@ $HADOOP_HOME/bin/hdfs dfs -ls / 2>&1 | head -5 || echo "    ⚠ HDFS ls failed -
 
 echo "    Tạo thư mục project trên HDFS..."
 $HADOOP_HOME/bin/hdfs dfs -mkdir -p /user/$USER || true
-$HADOOP_HOME/bin/hdfs dfs -mkdir -p /data/amazon-reviews/raw || true
-$HADOOP_HOME/bin/hdfs dfs -mkdir -p /data/amazon-reviews/samples || true
-$HADOOP_HOME/bin/hdfs dfs -mkdir -p /data/amazon-reviews/processed || true
+$HADOOP_HOME/bin/hdfs dfs -mkdir -p /bigdata/reviews/raw /bigdata/reviews/processed /bigdata/reviews/test /bigdata/models || true
+$HADOOP_HOME/bin/hdfs dfs -mkdir -p /data/amazon-reviews/raw /data/amazon-reviews/samples /data/amazon-reviews/processed || true
 
 echo "    ✓ HDFS directories created"
-$HADOOP_HOME/bin/hdfs dfs -ls /data/ 2>/dev/null
+$HADOOP_HOME/bin/hdfs dfs -ls /bigdata/reviews/ 2>/dev/null || true
 echo ""
 
 # -------------------------------------------------------
@@ -236,8 +235,37 @@ echo ""
 # -------------------------------------------------------
 echo "[6/6] Cài đặt PySpark và thư viện ML..."
 
-pip3 install --quiet --break-system-packages pyspark==3.5.5
-pip3 install --quiet --break-system-packages scikit-learn pandas numpy
+sudo apt-get install -y python3-pip python3-venv -qq
+python3 -m pip install --quiet --break-system-packages pyspark==3.5.5 scikit-learn pandas numpy pyyaml
+
+# Cấu hình Systemd Service hadoop-hdfs
+echo "    Đăng ký systemd service hadoop-hdfs..."
+sudo bash -c "cat > /etc/systemd/system/hadoop-hdfs.service" << SVCEOF
+[Unit]
+Description=Hadoop HDFS Daemons (NameNode, DataNode, SecondaryNameNode)
+After=network.target ssh.service
+Wants=ssh.service
+
+[Service]
+Type=forking
+User=$USER
+Environment="JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64"
+Environment="HADOOP_HOME=/opt/hadoop"
+Environment="HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop"
+ExecStart=/opt/hadoop/sbin/start-dfs.sh
+ExecStop=/opt/hadoop/sbin/stop-dfs.sh
+Restart=on-failure
+RestartSec=5
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+SVCEOF
+
+sudo systemctl daemon-reload
+sudo systemctl enable hadoop-hdfs
+sudo systemctl restart hadoop-hdfs || true
+echo "    ✓ hadoop-hdfs service enabled & started"
 
 echo "    Kiểm tra PySpark..."
 python3 -c "

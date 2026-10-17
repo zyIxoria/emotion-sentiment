@@ -270,7 +270,56 @@ Mô hình chiến thắng **`M2c_LR_elastic`** sau khi được fit lại trên 
 
 ---
 
-## 9. Kế hoạch Giai đoạn tiếp theo (Phase 5)
-1. Xây dựng ứng dụng Web Dashboard trực quan hóa tương tác (**Streamlit + Plotly**).
-2. Tích hợp trực tiếp với PySpark MLlib Pipeline hoặc trích xuất trọng số phục vụ real-time sentiment inference.
-3. Trực quan hóa ma trận nhầm lẫn, phân phối độ tin cậy và demo phân tích sắc thái cảm xúc từ người dùng nhập vào.
+## 9. Phase 5 — Xây dựng Streamlit Dashboard & Tích hợp Mô hình Tối ưu
+
+### 9.1. Kiến trúc Module Giao diện (Streamlit + PySpark + Plotly)
+Ứng dụng dashboard được thiết kế theo cấu trúc module phân tầng chuyên nghiệp:
+- **`app.py`**: Điểm khởi nhập chính của Streamlit UI với 4 tabs trực quan hóa.
+- **`src/dashboard/spark_manager.py`**: Quản lý vòng đời singleton `SparkSession`, kiểm tra kết nối HDFS socket, quản lý và thu hồi tài nguyên RAM (4 GB Driver).
+- **`src/dashboard/model_service.py`**: Tải `PipelineModel` (Phase 4 `M2c_LR_elastic`), tiền xử lý văn bản, kiểm tra trường hợp biên và suy luận xác suất.
+- **`src/dashboard/data_service.py`**: Thực hiện các phép gom nhóm phân tán trên Parquet HDFS (`groupBy`, `count`) và đọc báo cáo thực nghiệm Phase 3-4.
+- **`src/dashboard/visualization.py`**: Trực quan hóa dữ liệu tương tác bằng Plotly (Donut, Bar charts, Heatmap Confusion Matrix).
+
+### 9.2. Các Khu vực Chức năng trên Dashboard (4 Tabs)
+1. **📊 Tab 1 — Tổng quan (Overview):** Sơ đồ luồng Big Data toàn trình, biểu đồ phân phối 3 lớp cảm xúc và 1–5 sao từ HDFS Parquet.
+2. **🔮 Tab 2 — Dự đoán Cảm xúc (Live Prediction):** Nhập văn bản review tự do, chọn review mẫu nhanh, dự đoán nhãn cảm xúc kèm độ tin cậy và phân phối xác suất 3 lớp, đối chiếu với số sao (Ground-truth).
+3. **📈 Tab 3 — Đánh giá Mô hình (Model Evaluation):** Thẻ KPI đối đầu Baseline vs Best Model, Heatmap Ma trận nhầm lẫn tương tác, biểu đồ so sánh 8 thí nghiệm Phase 4, phân tích giới hạn của lớp Neutral (3 ⭐).
+4. **🔍 Tab 4 — Khám phá Dữ liệu (Data Explorer):** Xem schema chuẩn hóa, trích xuất mẫu an toàn (5–50 dòng) kèm bộ lọc theo Sentiment/Rating và tự động che giấu mã định danh `user_id`.
+
+### 9.3. Hướng dẫn Khởi chạy Ứng dụng Streamlit Dashboard
+
+#### Bước 1: Cài đặt các thư viện phụ thuộc
+```bash
+pip install -r requirements.txt
+```
+
+#### Bước 2: Đảm bảo dịch vụ Hadoop HDFS đang hoạt động (trên WSL2)
+```bash
+sudo systemctl status hadoop-hdfs
+# Nếu chưa chạy: sudo systemctl start hadoop-hdfs
+```
+
+#### Bước 3: Khởi chạy Streamlit Dashboard
+```bash
+streamlit run app.py
+```
+Giao diện sẽ tự động mở trên trình duyệt tại: `http://localhost:8501`.
+
+Để chạy ở chế độ headless (chạy ngầm hoặc server):
+```bash
+streamlit run app.py --server.headless true --server.port 8501
+```
+
+### 9.4. Chạy Bộ Kiểm thử Đơn vị & Tích hợp (Test Suite)
+Dự án cung cấp bộ kiểm thử toàn diện với 13 ca kiểm thử:
+```bash
+python -m pytest tests/ -v
+```
+Kết quả mong đợi: `13 passed in < 1s`.
+- `tests/test_label_mapping.py`: Kiểm tra quy tắc ánh xạ rating 1-5 sao sang 3 lớp cảm xúc.
+- `tests/test_model_loading.py`: Kiểm tra cấu hình HDFS, ngắt kết nối và phân loại ngoại lệ.
+- `tests/test_prediction.py`: Kiểm tra tiền xử lý, trường hợp biên (văn bản rỗng, emoji, văn bản dài) và tính toàn vẹn của báo cáo Phase 3-4.
+
+### 9.5. Báo cáo Chi tiết Phase 5
+Báo cáo toàn trình về kiến trúc, kiểm thử và nghiệm thu giao diện được lưu trữ tại:
+`reports/phase5_dashboard_report.md`

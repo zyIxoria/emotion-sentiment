@@ -195,5 +195,32 @@ environment:
     hdfs: "Hadoop HDFS trên WSL2 (Giai đoạn 2)"
     note: "CHƯA cài đặt trong Giai đoạn 1"
 
+# --- CẤU HÌNH DASHBOARD & MÔ HÌNH (PHASE 5) ---
+dashboard:
+  app_name: "Amazon-Reviews-Sentiment-Dashboard"
+  title: "Amazon Reviews 2023 — Sentiment Analysis Dashboard"
+  description: "Bảng điều khiển phân tích cảm xúc đánh giá sản phẩm làm đẹp trực tuyến trên nền tảng Big Data (Hadoop HDFS, PySpark MLlib, Streamlit, Plotly)."
+  hdfs_uri: "hdfs://localhost:9000"
+  model:
+    name: "M2c_LR_elastic"
+    full_name: "TF-IDF (10.000 features) + LogisticRegression (ElasticNet regParam=0.01, elasticNetParam=0.5)"
+    hdfs_path: "hdfs://localhost:9000/bigdata/models/phase4_best_model"
+    baseline_hdfs_path: "hdfs://localhost:9000/bigdata/models/baseline_lr_tfidf"
+    input_col: "full_text"
+    label_col: "label"
+    labels:
+      0: "Positive"
+      1: "Neutral"
+      2: "Negative"
+  datasets:
+    natural_100k_parquet: "hdfs://localhost:9000/bigdata/reviews/processed/all_beauty_100k_natural.parquet"
+    natural_test_20k_parquet: "hdfs://localhost:9000/bigdata/reviews/processed/all_beauty_natural_test.parquet"
+    balanced_train_45k_parquet: "hdfs://localhost:9000/bigdata/reviews/processed/all_beauty_balanced_train.parquet"
+    raw_jsonl: "hdfs://localhost:9000/bigdata/reviews/raw/All_Beauty_full.jsonl"
+  spark:
+    master: "local[*]"
+    driver_memory: "4g"
+    app_name: "AmazonReviewsSentimentDashboard"
+
 # --- KHÔNG LƯU Ở ĐÂY ---
 # Token, API key, thông tin xác thực không được lưu trong config này
