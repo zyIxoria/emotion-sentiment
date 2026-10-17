@@ -91,7 +91,20 @@ def get_spark_session(
                 "Vui lòng khởi động HDFS bằng lệnh: sudo systemctl start hadoop-hdfs (hoặc start-dfs.sh)."
             )
 
-    # 4. Khởi tạo SparkSession
+    # 4. Kiểm tra tính hợp lệ của SPARK_HOME nếu đã cấu hình
+    spark_home_env = os.environ.get("SPARK_HOME")
+    if spark_home_env:
+        spark_submit_posix = os.path.join(spark_home_env, "bin", "spark-submit")
+        spark_submit_win = os.path.join(spark_home_env, "bin", "spark-submit.cmd")
+        if not os.path.exists(spark_submit_posix) and not os.path.exists(spark_submit_win):
+            logger.warning(
+                "SPARK_HOME ('%s') không hợp lệ hoặc không tìm thấy spark-submit. "
+                "Tự động xóa biến SPARK_HOME để PySpark tự định vị từ thư viện cài đặt.",
+                spark_home_env
+            )
+            os.environ.pop("SPARK_HOME", None)
+
+    # 5. Khởi tạo SparkSession
     try:
         builder = SparkSession.builder \
             .appName(app_name) \

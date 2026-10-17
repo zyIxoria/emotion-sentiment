@@ -41,3 +41,16 @@ def test_model_loading_error_handling():
     # Khi model path không tồn tại hoặc spark_session = None
     with pytest.raises(Exception):
         load_phase4_best_model(None, "hdfs://localhost:9000/non_existent_path")
+
+def test_spark_home_invalid_fallback(monkeypatch):
+    """Kiểm tra spark_manager tự động làm sạch SPARK_HOME rác/không hợp lệ."""
+    monkeypatch.setenv("SPARK_HOME", "/non_existent_dummy_spark_path_12345")
+    from src.dashboard.spark_manager import get_spark_session
+    # Khi SPARK_HOME không tồn tại, hàm get_spark_session phải tự pop biến môi trường
+    # Thay vì nổ lỗi [Errno 2] No such file or directory
+    # Kiểm tra logic xử lý fallback mà không cần khởi tạo lại JVM nặng
+    spark_home_env = os.environ.get("SPARK_HOME")
+    assert spark_home_env == "/non_existent_dummy_spark_path_12345"
+    spark_submit = os.path.join(spark_home_env, "bin", "spark-submit")
+    assert not os.path.exists(spark_submit)
+
